@@ -13,7 +13,6 @@ import org.springframework.context.annotation.Configuration;
 import org.springframework.data.jpa.repository.config.EnableJpaRepositories;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
-import org.springframework.ui.ModelMap;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.servlet.config.annotation.WebMvcConfigurerAdapter;
 import org.springframework.web.servlet.view.jasperreports.JasperReportsMultiFormatView;
@@ -55,7 +54,7 @@ public class JasperApplication {
 		}
 		
 		@GetMapping("/cetak")
-		public String cetak(ModelMap model) {
+		public String cetak(Model model) {
 			model.addAttribute("datasource", dataSource);
 			model.addAttribute("format", "pdf");
 			return "rpt_user";
